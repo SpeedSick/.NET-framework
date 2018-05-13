@@ -1,0 +1,14 @@
+C:\Users\Alan\source\repos\FinalExam\FinalExam\bin\Debug\FinalExam.exe.config
+C:\Users\Alan\source\repos\FinalExam\FinalExam\bin\Debug\FinalExam.exe
+C:\Users\Alan\source\repos\FinalExam\FinalExam\bin\Debug\FinalExam.pdb
+C:\Users\Alan\source\repos\FinalExam\FinalExam\obj\Debug\FinalExam.csprojAssemblyReference.cache
+C:\Users\Alan\source\repos\FinalExam\FinalExam\obj\Debug\FinalExam.Events.resources
+C:\Users\Alan\source\repos\FinalExam\FinalExam\obj\Debug\FinalExam.Form1.resources
+C:\Users\Alan\source\repos\FinalExam\FinalExam\obj\Debug\FinalExam.Home.resources
+C:\Users\Alan\source\repos\FinalExam\FinalExam\obj\Debug\FinalExam.Order.resources
+C:\Users\Alan\source\repos\FinalExam\FinalExam\obj\Debug\FinalExam.Properties.Resources.resources
+C:\Users\Alan\source\repos\FinalExam\FinalExam\obj\Debug\FinalExam.Report.resources
+C:\Users\Alan\source\repos\FinalExam\FinalExam\obj\Debug\FinalExam.csproj.GenerateResource.cache
+C:\Users\Alan\source\repos\FinalExam\FinalExam\obj\Debug\FinalExam.csproj.CoreCompileInputs.cache
+C:\Users\Alan\source\repos\FinalExam\FinalExam\obj\Debug\FinalExam.exe
+C:\Users\Alan\source\repos\FinalExam\FinalExam\obj\Debug\FinalExam.pdb
