@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FinalExam {
     public class COrder {
@@ -11,7 +12,7 @@ namespace FinalExam {
             set;
         }
         private int cost { get; set; }
-        private List<CEvent> events { get; set; }
+        private List<CEvent> events { get; set; } = new List<CEvent>();
         private String city { get; set; }
 
         public int getId() { return this.id; }
@@ -31,14 +32,18 @@ namespace FinalExam {
         }
 
         public COrder(String s) {
+            MessageBox.Show(s);
             String[] tmp = s.Split('#');
-            for (int i = 1; i < tmp.Length; ++i)
+            for (int i = 1; i < tmp.Length; ++i) {
                 events.Add(new CEvent(tmp[i]));
+            }
+            
             tmp = tmp[0].Split(';');
             id = int.Parse(tmp[0]);
             cost = int.Parse(tmp[1]);
             city = tmp[2];
         }
+
         public override String ToString() {
             String res = "";
             res = res + id.ToString();
@@ -46,7 +51,7 @@ namespace FinalExam {
             res = res + cost.ToString();
             res = res + ";";
             res = res + city;
-
+            res = res + ";";
             foreach(CEvent x in events) {
                 res = res + x;
                 if (x != events.Last())

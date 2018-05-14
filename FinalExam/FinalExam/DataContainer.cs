@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 namespace FinalExam {
     public static class DataContainer {
         public static int eventId = 0;
         public static int orderId = 0;
-        public static List<CEvent> allEvents { get; set; }
-        public static List<COrder> allOrders { get; set; }
+        public static List<CEvent> allEvents { get; set; } = new List<CEvent>();
+        public static List<COrder> allOrders { get; set; } = new List<COrder>();
+        
 
         public static List<CEvent> loadEvents() {
             List<CEvent> newEvents = new List<CEvent>();
@@ -38,16 +40,30 @@ namespace FinalExam {
             return newOrders;
         }
 
-        public static void updateEvents(CEvent e) {
-            allEvents.Add(e);
+        public static void updateEvents(CEvent e, int type = 0) {
+            
+            if (type == 0)
+                allEvents.Add(e);
+            else {
+                CEvent toRemove = e;
+                foreach(CEvent x in allEvents) {
+                    if (x.ToString().Equals(e.ToString()))
+                        toRemove = x;
+                }
+                allEvents.Remove(toRemove);
+            }
             using (StreamWriter wr = new StreamWriter("Events.txt")) {
                 foreach (CEvent x in allEvents) {
                     wr.WriteLine(x.ToString());
                 }
             }
         }
-        public static void updateOrders(COrder e) {
-            allOrders.Add(e);
+        public static void updateOrders(COrder e, int type = 0) {
+            if (type == 0)
+                allOrders.Add(e);
+            else {
+                allOrders.Remove(e);
+            }
             using (StreamWriter wr = new StreamWriter("Orders.txt")) {
                 foreach (COrder x in allOrders) {
                     wr.WriteLine(x.ToString());

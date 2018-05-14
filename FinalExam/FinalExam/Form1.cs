@@ -19,11 +19,15 @@ namespace FinalExam {
 
         public Form1() {
             InitializeComponent();
+            events = new Events();
+            orders = new Order();
+            reports = new Report();
             DataContainer.allEvents = DataContainer.loadEvents();
             DataContainer.allOrders = DataContainer.loadOrders();
         }
 
         private void eventButton_Click(object sender, EventArgs e) {
+            events = new Events();
             events.TopLevel = false;
             content.Controls.Clear();
             content.Controls.Add(events);
@@ -31,6 +35,7 @@ namespace FinalExam {
         }
 
         private void orderButton_Click(object sender, EventArgs e) {
+            orders = new Order();
             orders.TopLevel = false;
             content.Controls.Clear();
             content.Controls.Add(orders);
@@ -38,6 +43,7 @@ namespace FinalExam {
         }
 
         private void reportButton_Click(object sender, EventArgs e) {
+            reports = new Report();
             reports.TopLevel = false;
             content.Controls.Clear();
             content.Controls.Add(reports);

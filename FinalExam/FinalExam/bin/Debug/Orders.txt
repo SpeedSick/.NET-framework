@@ -1,0 +1,5 @@
+1;600;oglahoma;1;2018.5.18;oglahoma;300
+2;500;almaty;4;2018.5.14;almaty;500
+3;500;almaty;4;2018.5.14;almaty;500
+4;500;almaty;4;2018.5.14;almaty;500
+5;500;almaty;4;2018.5.14;almaty;500

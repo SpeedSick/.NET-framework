@@ -35,6 +35,12 @@
             this.CurrentOrder = new System.Windows.Forms.ListBox();
             this.OrderCost = new System.Windows.Forms.TextBox();
             this.CompleteOrder = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cityFilter = new System.Windows.Forms.TextBox();
+            this.costFilter = new System.Windows.Forms.TextBox();
+            this.cityFilterButton = new System.Windows.Forms.Button();
+            this.costFilterButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonAddToOrder
@@ -109,12 +115,70 @@
             this.CompleteOrder.UseVisualStyleBackColor = true;
             this.CompleteOrder.Click += new System.EventHandler(this.CompleteOrder_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(717, 50);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(176, 22);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Text = "City";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(717, 128);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(176, 22);
+            this.textBox2.TabIndex = 10;
+            this.textBox2.Text = "Cost";
+            // 
+            // cityFilter
+            // 
+            this.cityFilter.Location = new System.Drawing.Point(717, 78);
+            this.cityFilter.Name = "cityFilter";
+            this.cityFilter.Size = new System.Drawing.Size(176, 22);
+            this.cityFilter.TabIndex = 11;
+            // 
+            // costFilter
+            // 
+            this.costFilter.Location = new System.Drawing.Point(717, 167);
+            this.costFilter.Name = "costFilter";
+            this.costFilter.Size = new System.Drawing.Size(176, 22);
+            this.costFilter.TabIndex = 12;
+            // 
+            // cityFilterButton
+            // 
+            this.cityFilterButton.Location = new System.Drawing.Point(899, 48);
+            this.cityFilterButton.Name = "cityFilterButton";
+            this.cityFilterButton.Size = new System.Drawing.Size(79, 52);
+            this.cityFilterButton.TabIndex = 13;
+            this.cityFilterButton.Text = "filter by city";
+            this.cityFilterButton.UseVisualStyleBackColor = true;
+            this.cityFilterButton.Click += new System.EventHandler(this.cityFilterButton_Click);
+            // 
+            // costFilterButton
+            // 
+            this.costFilterButton.Location = new System.Drawing.Point(899, 128);
+            this.costFilterButton.Name = "costFilterButton";
+            this.costFilterButton.Size = new System.Drawing.Size(79, 61);
+            this.costFilterButton.TabIndex = 14;
+            this.costFilterButton.Text = "filter by cost";
+            this.costFilterButton.UseVisualStyleBackColor = true;
+            this.costFilterButton.Click += new System.EventHandler(this.costFilterButton_Click);
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1013, 484);
+            this.Controls.Add(this.costFilterButton);
+            this.Controls.Add(this.cityFilterButton);
+            this.Controls.Add(this.costFilter);
+            this.Controls.Add(this.cityFilter);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.CompleteOrder);
             this.Controls.Add(this.OrderCost);
             this.Controls.Add(this.CurrentOrder);
@@ -139,5 +203,11 @@
         private System.Windows.Forms.ListBox CurrentOrder;
         private System.Windows.Forms.TextBox OrderCost;
         private System.Windows.Forms.Button CompleteOrder;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox cityFilter;
+        private System.Windows.Forms.TextBox costFilter;
+        private System.Windows.Forms.Button cityFilterButton;
+        private System.Windows.Forms.Button costFilterButton;
     }
 }

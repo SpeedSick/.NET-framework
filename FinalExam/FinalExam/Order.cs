@@ -16,11 +16,11 @@ namespace FinalExam {
             InitializeComponent();
             currentCost = 0;
             foreach (CEvent x in DataContainer.allEvents)
-                EventList.Items.Add(x);
+                EventList.Items.Add(x.ToString());
         }
         public int getCost(String s) {
             String[] tmp = s.Split(';');
-            return int.Parse(tmp[1]);
+            return int.Parse(tmp[3]);
         }
         public String getCity(String s) {
             String[] tmp = s.Split(';');
@@ -70,7 +70,8 @@ namespace FinalExam {
                     int eventCost = getCost(CurrentOrder.SelectedItems[i].ToString());
                     currentCost -= currentCost;
                 }
-                CurrentOrder.Items.Remove(CurrentOrder.SelectedItems);
+                CurrentOrder.Items.Remove(CurrentOrder.SelectedItems[0]);
+                OrderCost.Text = currentCost.ToString();
                 MessageBox.Show("Done");
             } else {
                 MessageBox.Show("no event is selected");
@@ -94,6 +95,51 @@ namespace FinalExam {
             } else {
                 MessageBox.Show("empty order");
             }
+        }
+
+        private void cityFilterButton_Click(object sender, EventArgs e) {
+            if(cityFilter.Text == null || cityFilter.Text.Length == 0) {
+                EventList.Items.Clear();
+                foreach(CEvent E in DataContainer.allEvents) {
+                    EventList.Items.Add(E);
+                }
+            } else {
+                EventList.Items.Clear();
+                foreach(CEvent E in DataContainer.allEvents) {
+                    if(E.getCity().Equals(cityFilter.Text.ToString().ToLower()) == true) {
+                        EventList.Items.Add(E);
+                    }
+                }
+            }
+            MessageBox.Show("Done");
+        }
+        bool isNumber(String s ) {
+            for(int i = 0; i < s.Length; ++i) {
+                if (s[i] < '0' || s[i] > '9') return false;
+            }
+            return true;
+        }
+
+        private void costFilterButton_Click(object sender, EventArgs e) {
+            if(costFilter.Text == null) {
+                EventList.Items.Clear();
+                foreach (CEvent E in DataContainer.allEvents) {
+                    EventList.Items.Add(E);
+                }
+                MessageBox.Show("Done");
+                return;
+            }
+            if (!isNumber(costFilter.Text.ToString())) {
+                MessageBox.Show("cost should be non-negative integer!");
+                return;
+            }
+            EventList.Items.Clear();
+            foreach (CEvent E in DataContainer.allEvents) {
+                if (E.getCost() <= int.Parse(costFilter.Text.ToString())) {
+                    EventList.Items.Add(E);
+                }
+            }
+            MessageBox.Show("Done");
         }
     }
 }
